@@ -4,8 +4,8 @@
 
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="android.permission.INTERNET" />
-    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
-    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
 
     <application
         android:name=".GitsApplication"
@@ -17,16 +17,28 @@
         android:theme="@style/AppTheme">
         <meta-data
             android:name="io.fabric.ApiKey"
-            android:value="261e27dc5baae72193fd64e849234ca4bcf6971d"/>
-        <activity android:name=".mvvm.main.MainActivity">
+            android:value="261e27dc5baae72193fd64e849234ca4bcf6971d" />
+
+        <activity
+            android:name=".mvvm.login.LoginActivity"
+            android:windowSoftInputMode="adjustResize"
+            >
+
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".mvvm.maindetail.MainDetailActivity"
-            android:theme="@style/AppThemeDetail"/>
+        <activity android:name=".mvvm.forgotpassword.ForgotPasswordActivity">
+
+        </activity>
+        <activity android:name=".mvvm.main.MainActivity">
+
+        </activity>
+        <activity
+            android:name=".mvvm.maindetail.MainDetailActivity"
+            android:theme="@style/AppThemeDetail" />
     </application>
 
 </manifest>

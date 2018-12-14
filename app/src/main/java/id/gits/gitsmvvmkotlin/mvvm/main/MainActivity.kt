@@ -1,11 +1,14 @@
 package id.gits.gitsmvvmkotlin.mvvm.main
 
+import android.content.Context
+import android.content.Intent
 import android.databinding.DataBindingUtil
 import android.os.Bundle
 import android.util.Log
 import id.gits.gitsmvvmkotlin.R
 import id.gits.gitsmvvmkotlin.base.BaseActivity
 import id.gits.gitsmvvmkotlin.databinding.MainActivityBinding
+import id.gits.gitsmvvmkotlin.mvvm.forgotpassword.ForgotPasswordActivity
 import id.gits.gitsmvvmkotlin.util.*
 import kotlinx.android.synthetic.main.toolbar.*
 
@@ -55,4 +58,11 @@ class MainActivity : BaseActivity() {
         is UserOperationSealed.MultiplyOperation -> operation.value * x
         is UserOperationSealed.SubstractOperation -> operation.value - x
     }
+
+    companion object {
+        fun startActivity(context: Context) {
+            context.startActivity(Intent(context, MainActivity::class.java))
+        }
+    }
+
 }
