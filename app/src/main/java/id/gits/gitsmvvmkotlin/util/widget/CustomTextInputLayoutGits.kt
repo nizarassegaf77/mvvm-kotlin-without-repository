@@ -6,13 +6,15 @@ import android.support.design.widget.TextInputLayout
 import android.text.Editable
 import android.text.TextWatcher
 import android.util.AttributeSet
+import android.view.View
 import java.util.ArrayList
 import id.gits.gitsmvvmkotlin.R
 import id.gits.gitsmvvmkotlin.util.widget.validator.*
 import kotlin.math.max
 
-class CustomTextInputLayoutGits : TextInputLayout {
+open class CustomTextInputLayoutGits : TextInputLayout {
     private var mValidators: MutableList<BaseValidator>? = null
+    var isSpinner = false
     /**
      * @return if auto-validation is enabled
      */
@@ -61,6 +63,15 @@ class CustomTextInputLayoutGits : TextInputLayout {
                     initializeTextWatcher()
             }
         }
+    }
+
+    private fun requestFocusSpinner(view: View) {
+        view.isFocusableInTouchMode = true
+        if (view.requestFocus()) {
+            //scroll.clearFocus()
+            view.requestFocus()
+        }
+        view.isFocusableInTouchMode = false
     }
 
     private fun initializeCustomAttrs(context: Context, attrs: AttributeSet) {
@@ -216,6 +227,9 @@ class CustomTextInputLayoutGits : TextInputLayout {
                 isErrorEnabled = true
                 error = validator.errorMessage
                 status = false
+                if (isSpinner) {
+                    requestFocusSpinner(this)
+                }
                 break
             } else {
                 error = null

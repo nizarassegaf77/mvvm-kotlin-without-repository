@@ -4,6 +4,7 @@ import android.arch.lifecycle.Observer
 import android.content.Intent
 import android.os.Bundle
 import android.os.Handler
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -44,14 +45,23 @@ class LoginFragment : BaseFragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
+        //set item spinnser
+        typeLoginEditText.items.add("Admin")
+        typeLoginEditText.items.add("Manager")
+        typeLoginEditText.items.add("User")
+
         setupLoginViewModel()
 
         buttonLogin.setOnClickListener {
-            if (email.validate() && password.validate()) {
+            if (email.validate() && password.validate() && typeLogin.validate()) {
                 buttonLogin.showLoading()
                 Handler().postDelayed({
                     MainActivity.startActivity(requireContext())
                     buttonLogin.hideLoading()
+
+                    //sample get position spinner selected
+                    Log.wtf("positionselected",typeLoginEditText.positionSelected.toString())
+
                 }, 1000)
 
             }
