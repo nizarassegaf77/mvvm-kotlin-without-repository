@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <import type="android.view.View" />
+
+        <variable
+            name="viewModel"
+            type="id.gits.gitsmvvmkotlin.mvvm.login.LoginViewModel" />
+
+    </data>
+
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:scrollbars="none">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <ImageView
+                android:id="@+id/logo"
+                android:layout_width="160dp"
+                android:layout_height="160dp"
+                android:layout_gravity="center"
+                android:layout_margin="24dp"
+                android:scaleType="fitCenter"
+                android:src="@android:color/darker_gray"
+                tools:visibility="visible" />
+
+            <LinearLayout
+                android:id="@+id/form_container"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="32dp"
+                android:layout_marginTop="@dimen/dimens_24dp"
+                android:layout_marginRight="32dp"
+                android:layout_marginBottom="@dimen/dimens_24dp"
+                android:orientation="vertical">
+
+                <id.gits.gitsmvvmkotlin.util.widget.CustomTextInputLayoutGits
+                    android:id="@+id/email"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    app:autoTrim="true"
+                    app:autoValidate="true"
+                    app:errorAlwaysEnabled="true"
+                    app:hintTextAppearance="@color/colorPrimary"
+                    app:regex="^[a-z0-9._%+-]+@(?:[a-z0-9-]+[.])+[a-z]{2,}$"
+                    app:regexValidationMessage="Please provide a valid email.">
+
+                    <android.support.design.widget.TextInputEditText
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="Email"
+                        android:singleLine="true" />
+
+                </id.gits.gitsmvvmkotlin.util.widget.CustomTextInputLayoutGits>
+
+                <id.gits.gitsmvvmkotlin.util.widget.CustomTextInputLayoutGits
+                    android:id="@+id/password"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    app:autoValidate="true"
+                    app:errorAlwaysEnabled="true"
+                    app:hintTextAppearance="@color/colorPrimary"
+                    app:maxLength="8"
+                    app:minLength="4"
+                    app:passwordToggleDrawable="@android:drawable/ic_menu_view"
+                    app:passwordToggleEnabled="true"
+                    app:passwordToggleTint="@color/colorAccent"
+                    app:passwordToggleTintMode="src_atop"
+                    app:regexValidationMessage="">
+
+                    <android.support.design.widget.TextInputEditText
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="Password"
+                        android:inputType="textPassword"
+                        android:singleLine="true" />
+
+                </id.gits.gitsmvvmkotlin.util.widget.CustomTextInputLayoutGits>
+
+                <TextView
+                    android:id="@+id/btnForgotPassword"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="right"
+                    android:foreground="?attr/selectableItemBackground"
+                    android:text="Lupa Password"
+                    android:textColor="@color/colorPrimary" />
+
+            </LinearLayout>
+
+            <id.gits.gitsmvvmkotlin.util.widget.CustomButtonGits
+                android:id="@+id/buttonLogin"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginLeft="@dimen/dimens_16dp"
+                android:layout_marginRight="@dimen/dimens_16dp"
+                android:layout_marginBottom="@dimen/dimens_24dp"
+                android:gravity="center"
+                android:padding="8dp"
+                android:textAllCaps="false"
+                app:pressedColor="@color/colorPrimary"
+                app:progressBarSize="large"
+                app:progressColor="@color/mainWhite"
+                app:shapeType="rounded"
+                app:text="Custom Button"
+                app:textColor="#FFff9d00"
+                app:unpressedColor="@color/colorPrimaryDark"
+                tools:background="@color/colorPrimary" />
+
+        </LinearLayout>
+
+    </ScrollView>
+
+</layout>

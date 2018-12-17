@@ -5,6 +5,8 @@ import android.app.Application
 import android.arch.lifecycle.ViewModel
 import android.arch.lifecycle.ViewModelProvider
 import id.gits.gitsmvvmkotlin.data.source.GitsRepository
+import id.gits.gitsmvvmkotlin.mvvm.forgotpassword.ForgotPasswordViewModel
+import id.gits.gitsmvvmkotlin.mvvm.login.LoginViewModel
 import id.gits.gitsmvvmkotlin.mvvm.main.MainViewModel
 import id.gits.gitsmvvmkotlin.mvvm.maindetail.MainDetailViewModel
 
@@ -25,6 +27,10 @@ class ViewModelFactory private constructor(
                         MainViewModel(mApplication, gitsRepository)
                     isAssignableFrom(MainDetailViewModel::class.java) ->
                         MainDetailViewModel(mApplication, gitsRepository)
+                    isAssignableFrom(LoginViewModel::class.java) ->
+                        LoginViewModel(mApplication, gitsRepository)
+                    isAssignableFrom(ForgotPasswordViewModel::class.java) ->
+                        ForgotPasswordViewModel(mApplication, gitsRepository)
                     else ->
                         throw IllegalArgumentException("Unknown ViewModel class: ${modelClass.name}")
                 }

@@ -16,7 +16,6 @@ class MainViewModel(context: Application, private val gitsRepository: GitsReposi
 
     var movieListLive = SingleLiveEvent<List<Movie>>()
     val snackBarMessageRemote = SingleLiveEvent<String>()
-
     internal val openDetailMovie = SingleLiveEvent<Movie>()
 
     fun start() {

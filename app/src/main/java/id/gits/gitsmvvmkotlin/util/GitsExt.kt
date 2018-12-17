@@ -27,6 +27,7 @@ import id.gits.gitsmvvmkotlin.R
 /**
  * Created by irfanirawansukirman on 26/01/18.
  */
+
 fun AppCompatActivity.replaceFragmentInActivity(fragment: Fragment, frameId: Int) {
     supportFragmentManager.transact {
         replace(frameId, fragment)

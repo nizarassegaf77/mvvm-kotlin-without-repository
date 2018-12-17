@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="CustomButtonGits">
+        <attr name="pressedColor" format="color" />
+        <attr name="unpressedColor" format="color" />
+        <attr name="roundRadius" format="dimension" />
+        <attr name="btnRadius" format="dimension" />
+        <attr name="textColor" format="color" />
+        <attr name="text" format="string" />
+        <attr name="rippleAlpha" format="integer" />
+        <attr name="rippleDuration" format="integer" />
+        <attr name="shapeType" format="enum">
+            <enum name="rectangle" value="1" />
+            <enum name="rounded" value="0" />
+        </attr>
+        <!--<attr name="progressBarSize" format="dimension" />-->
+        <attr name="progressColor" format="color" />
+        <attr name="progressBarSize" format="enum">
+            <enum name="large" value="0" />
+            <enum name="small" value="1" />
+        </attr>
+    </declare-styleable>
+    <declare-styleable name="CustomImageButton">
+        <attr name="pressedSrc" format="reference" />
+        <attr name="unpressedSrc" format="reference" />
+    </declare-styleable>
+
+    <declare-styleable name="CustomTextInputLayoutGits">
+        <attr name="autoValidate" format="boolean"/>
+        <attr name="autoTrim" format="boolean"/>
+        <attr name="isRequired" format="boolean"/>
+        <attr name="errorAlwaysEnabled" format="boolean"/>
+        <attr name="requiredValidationMessage" format="string"/>
+        <attr name="minLength" format="integer">
+            <enum name="zero" value="0"/>
+        </attr>
+        <attr name="maxLength" format="integer">
+            <enum name="indefinite" value="-1"/>
+        </attr>
+        <attr name="lengthValidationMessage" format="string"/>
+        <attr name="regex" format="string"/>
+        <attr name="regexValidationMessage" format="string"/>
+    </declare-styleable>
+
+</resources>
