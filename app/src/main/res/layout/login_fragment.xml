@@ -13,7 +13,6 @@
 
     </data>
 
-
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -76,7 +75,7 @@
                     app:minLength="4"
                     app:passwordToggleDrawable="@android:drawable/ic_menu_view"
                     app:passwordToggleEnabled="true"
-                    app:passwordToggleTint="@color/colorAccent"
+                    app:passwordToggleTint="@color/colorPrimary"
                     app:passwordToggleTintMode="src_atop"
                     app:regexValidationMessage="">
 
@@ -85,6 +84,30 @@
                         android:layout_height="wrap_content"
                         android:hint="Password"
                         android:inputType="textPassword"
+                        android:singleLine="true" />
+
+                </id.gits.gitsmvvmkotlin.util.widget.CustomTextInputLayoutGits>
+
+                <id.gits.gitsmvvmkotlin.util.widget.CustomTextInputLayoutGits
+                    android:id="@+id/typeLogin"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    app:autoTrim="true"
+                    app:autoValidate="true"
+                    app:errorAlwaysEnabled="true"
+                    app:hintTextAppearance="@color/colorPrimary"
+                    app:isRequired="true"
+                    app:requiredValidationMessage="Pilih type login">
+
+                    <id.gits.gitsmvvmkotlin.util.widget.CustomTextinputLayoutSpinnerGits
+                        android:id="@+id/typeLoginEditText"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:drawableTint="@color/colorPrimary"
+                        android:drawableEnd="@android:drawable/arrow_down_float"
+                        android:drawableRight="@android:drawable/arrow_down_float"
+                        android:hint="Type"
                         android:singleLine="true" />
 
                 </id.gits.gitsmvvmkotlin.util.widget.CustomTextInputLayoutGits>
